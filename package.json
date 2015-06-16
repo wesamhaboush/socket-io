@@ -1,0 +1,22 @@
+{
+  "name": "request-transform-stream",
+  "version": "1.0.0",
+  "description": "testing streaming into a response of multiple request responses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wesamhaboush/request-transform-stream.git"
+  },
+  "author": "wesam@coldbreeze.net",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wesamhaboush/request-transform-stream/issues"
+  },
+  "homepage": "https://github.com/wesamhaboush/request-transform-stream",
+  "dependencies": {
+    "socket.io": "^1.3.5"
+  }
+}
