@@ -12,5 +12,5 @@ if (cluster.isMaster) {
         console.log('worker ' + worker.process.pid + ' died');
     });
 } else {
-    require('./backend.js');
+    require('./middletier.js');
 }
