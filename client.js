@@ -18,6 +18,6 @@ for (var i = 0; i < messageCount; i++) {
     console.log('sending request: ' + i);
     var startTime = new Date().getTime();
     conn.emit('message', {
-        request: i
+        request: i, requestCount: 1
     }, createHandleResponseDone(startTime));
 }
