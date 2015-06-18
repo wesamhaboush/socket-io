@@ -1,5 +1,5 @@
 const http = require('http');
-var requestCount = 10;
+var requestCount = 1;
 var resultCount = 0;
 
 const OPTIONS = {

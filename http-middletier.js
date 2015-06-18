@@ -22,6 +22,7 @@ var incomingRequestCount = 0;
 function handleRequest(request, response) {
     var indexOfSlash = request.url.lastIndexOf('/');
     var requestCount = Number(request.url.substring(indexOfSlash + 1));
+    console.log(requestCount);
     requestResultsWaitForAllRequests(requestCount, response);
     console.log('incoming request count [%d]', ++incomingRequestCount);
 }
@@ -43,7 +44,7 @@ function requestResultsWaitForAllRequests(requestCount, outres) {
             inres.on('data', function(chunk) {
                 results += chunk;
                 ++requestsCompleted;
-                if (requestsCompleted == REQUEST_COUNT) {
+                if (requestsCompleted == requestCount) {
                     outres.end(results);
                 }
             });

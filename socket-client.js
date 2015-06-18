@@ -5,7 +5,7 @@ var responseTimeAverage = 0;
 var messageCount = 500;
 var resultCount = 0;
 var experimentStartTime = new Date().getTime();
-var requestCount = 10;
+var requestCount = 1;
 
 var handlePartialResult = function(startTime) {
     var endTime = new Date().getTime();
