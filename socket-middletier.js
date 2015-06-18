@@ -33,7 +33,7 @@ socket.on('connection', function(client) {
     // Success!  Now listen to messages to be received
     client.on('message', function(event, clientCallBack) {
         console.log('Received request from client!', event);
-        requestResultsOnTheFly(event.requestCount, client, clientCallBack);
+        requestResultsOnTheFly(event.requestCount, client);
     });
     client.on('disconnect', function() {
         console.log('Server has disconnected');
@@ -43,7 +43,7 @@ socket.on('connection', function(client) {
 
 
 
-function requestResultsOnTheFly(requestCount, socket, clientCallBack) {
+function requestResultsOnTheFly(requestCount, socket) {
     var requestsCompleted = 0;
     for (var i = 0; i < requestCount; i++) {
         http.request(OPTIONS, function(inres) {
@@ -52,9 +52,6 @@ function requestResultsOnTheFly(requestCount, socket, clientCallBack) {
                 socket.emit('partial-result', chunk);
                 ++requestsCompleted;
                 if (requestsCompleted == requestCount) {
-                    clientCallBack(0, {
-                        completed: requestsCompleted
-                    });
                     //socket.disconnect();
                 }
             });
